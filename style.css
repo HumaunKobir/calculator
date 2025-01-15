@@ -1,0 +1,194 @@
+
+/* Gradient Background for the entire page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6e7fca, #4e73df);
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Glass Effect on the container */
+.container {
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    box-shadow: none;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent input fields */
+}
+
+.form-control:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+label {
+    font-weight: bold;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+    transition: all 0.3s ease;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}
+
+#result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2e59d9;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInResult 1s ease-out forwards;
+}
+
+@keyframes fadeInResult {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+select.form-control {
+    padding-left: 20px;
+    font-size: 1.1rem;  /* Increased font size */
+}
+
+.col-md-6 {
+    max-width: 100%;
+}
+
+/* Mobile-first responsive tweaks */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .form-control {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .btn-primary {
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+
+    select.form-control {
+        font-size: 1rem; /* Adjust dropdown font size for mobile */
+        padding-left: 15px;
+    }
+}
+
+/* For large screens (tablets and beyond) */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    .form-control {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    .btn-primary {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    select.form-control {
+        font-size: 1.1rem;  /* Adjust font size for better visibility on larger screens */
+        padding-left: 20px; /* Extra padding for better alignment */
+    }
+}
