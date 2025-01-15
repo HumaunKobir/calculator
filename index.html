@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Responsive Calculator</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Calculator</h1>
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
+        <h1 class="text-center mb-4">Simple Calculator</h1>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                 <form id="calculatorForm">
                     <div class="form-group">
                         <label for="num1">Number 1</label>
@@ -29,13 +31,17 @@
                             <option value="divide">Division (/)</option>
                         </select>
                     </div>
-                    <button type="button" class="btn btn-primary btn-block" onclick="calculate()">Calculate</button>
+                    <!-- Centered button with full width -->
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary btn-block text-center" onclick="calculate()">Calculate</button>
+                        </div>
+                    </div>
                 </form>
-                <div id="result" class="mt-4"></div>
+                <div id="result" class="mt-4 text-center"></div>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

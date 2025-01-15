@@ -1,32 +1,37 @@
 function calculate() {
-    var num1 = parseFloat(document.getElementById('num1').value);
-    var num2 = parseFloat(document.getElementById('num2').value);
-    var operation = document.getElementById('operation').value;
-    var result = document.getElementById('result');
-
-    if (isNaN(num1) || isNaN(num2)) {
-        result.innerHTML = "Please enter valid numbers.";
-        return;
-    }
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const operation = document.getElementById('operation').value;
+    let result;
 
     switch (operation) {
         case 'add':
-            result.innerHTML = "Result: " + (num1 + num2);
+            result = num1 + num2;
             break;
         case 'subtract':
-            result.innerHTML = "Result: " + (num1 - num2);
+            result = num1 - num2;
             break;
         case 'multiply':
-            result.innerHTML = "Result: " + (num1 * num2);
+            result = num1 * num2;
             break;
         case 'divide':
-            if (num2 === 0) {
-                result.innerHTML = "Cannot divide by zero.";
+            if (num2 !== 0) {
+                result = num1 / num2;
             } else {
-                result.innerHTML = "Result: " + (num1 / num2);
+                result = 'Cannot divide by zero';
             }
             break;
-        default:
-            result.innerHTML = "Invalid operation.";
     }
+
+    const resultElement = document.getElementById('result');
+    resultElement.textContent = 'Result: ' + result;
+
+    // Animation for result display
+    anime({
+        targets: '#result',
+        translateY: [30, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        easing: 'easeOutQuad'
+    });
 }
